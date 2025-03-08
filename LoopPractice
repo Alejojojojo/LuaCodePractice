@@ -1,0 +1,83 @@
+--------------------
+-- Loop practice
+-------------------
+
+for i = 1, 10, 1 do 
+	task.wait(1)
+	print(i)
+end
+
+local myArray = {1, 2, 3, 4, 5}
+for _, v in ipairs(myArray) do
+	if v % 2 ~= 0 then
+		continue 
+	end
+end
+
+--TASK 1:
+--	Print the even numbers!
+--	Create an infinite while loop that increments a variable by 1 each interation. 
+--	Print out only even numbers. If a number is odd, try using the 'continue' keyword.
+--	Use the % modulo operator to help you. do
+	
+--	The modulo operator returns the leftover value from division.
+-- 4 % 2 = 0 -- even/par
+-- 5 % 2 = 1 -- odd/impar
+
+ practice 1
+local i = 1
+while true do 
+	task.wait(1)
+	i += 1
+	if i % 2 == 0 then
+		print(i)
+		continue
+	end
+end	
+
+
+-- Practice 2 
+
+--[[
+	Task 2 
+	Simple random dungeon game!
+	
+	Create an infinite while loop that generates a random number between 
+	1 and 10. Use the math.random() to help you 
+	
+	When the number is equal to 1, display a string saying the exit was 
+	found and exit the loop using the 'break' keyword.
+	When the number is equal to 2, display a string that says the player
+	encountered a monster.
+	When the number is equal to 3, display a string saying the player
+	encountered some loot.
+	When the number is not equal to any of those, display a string 
+	saying the player is wandering the dungeon 
+]]
+
+local randomInt = math.random(1, 10)
+local string1 = "The exit was found!"
+local string2 = "The player has encountered a monster!"
+local string3 = "The player has encountered some loot!"
+local string4 = "The player is wandering the dungeon!"
+print (randomInt)
+while true do 
+	task.wait(1)
+	if randomInt == 1 then
+		print(string1)
+		break
+	end
+	if randomInt == 2 then 
+		print(string2) 
+		break
+	end
+	if randomInt == 3 then
+		print(string3)
+		break
+	end
+	if randomInt > 3 then 
+		print (string4)
+		continue
+	end
+end
+
