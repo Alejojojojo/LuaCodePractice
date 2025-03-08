@@ -1,0 +1,35 @@
+--[[
+
+Goal: 
+	Create a function that takes two strings.
+	Have the function print both strings together with a space separating them.
+	Have the function yield for 0.5 seconds.
+	Then have the function print both strings together, but with both strings reversed.
+	Have the function yield again for 0.5 seconds.
+	Then have the function print both strings together, but with both captialized
+	Then have the function print "finished!"
+	
+	Call this function 10 times using a for loop
+]]
+function exampleFunc(string1, string2)
+	local exampleString = (string1.." "..string2)
+	print(exampleString)
+	task.wait(0.5)
+	local exampleString = string.reverse(exampleString)
+	print(exampleString)
+	task.wait(0.5)
+	local exampleString = string.upper(exampleString)
+	print(exampleString)
+	
+	print("Finished!")
+	
+
+end
+
+-- Calling the function according to the GOAL
+
+for i = 1, 10, 1 do
+	task.wait(1)
+	exampleFunc("hola","funciona?") 
+	print(i)
+end
